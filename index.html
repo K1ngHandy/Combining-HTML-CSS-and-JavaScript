@@ -14,13 +14,16 @@
     */
     const customBtn = document.createElement('button');
     customBtn.classList.add('custom-btn');
+    customBtn.innerText = "Click Me";
     document.querySelector('.custom-buttons').appendChild(customBtn);
 
     /* 
     PROBLEM 2: Style the component
     Style the button component from Problem 1 with a background color of red, white text color, and a padding of 10px.
     */
-    //ENTER YOUR CODE HERE
+    customBtn.style.backgroundColor = "red";
+    customBtn.style.color = "white";
+    customBtn.style.padding = "10px";
 
     /* 
     PROBLEM 3: Create multiple button components
