@@ -12,31 +12,45 @@
     Create a button component with the class "custom-btn" that displays the text "Click Me".
     Append the button to the element with the class "custom-buttons".
     */
-    const customBtn = document.createElement('button');
-    customBtn.classList.add('custom-btn');
-    customBtn.innerText = "Click Me";
-    document.querySelector('.custom-buttons').appendChild(customBtn);
+    const buttonCreate = () => {
+      const customBtn = document.createElement('button');
+      customBtn.classList.add('custom-btn');
+      customBtn.innerText = "Click Me";
+      document.querySelector('.custom-buttons').insertAdjacentElement('afterbegin', customBtn);
+    }
+    buttonCreate();
 
     /* 
     PROBLEM 2: Style the component
     Style the button component from Problem 1 with a background color of red, white text color, and a padding of 10px.
     */
-    customBtn.style.backgroundColor = "red";
-    customBtn.style.color = "white";
-    customBtn.style.padding = "10px";
+    const styles = () => {
+      const buttons = document.querySelectorAll('.custom-btn');
+      buttons.forEach((button) => {
+        button.style.backgroundColor = "red";
+        button.style.color = "white";
+        button.style.padding = "10px";
+      });
+    }
 
     /* 
     PROBLEM 3: Create multiple button components
     Use a loop to create five button components with the class "custom-btn" and display them inside the element with the class "custom-buttons".
     */
-    //ENTER YOUR CODE HERE
+    const buttonsCreate = (numButtons) => {
+      for (let i = 0; i < numButtons; i++) {
+        buttonCreate();
+      }
+      styles();
+    }
+    buttonsCreate(5);
 
     /* 
     PROBLEM 4: Make the buttons interactive
     Add a click event listener to each button component created in Problem 3.
     When a button is clicked, display an alert with the text "Button [button number] clicked!" (e.g., "Button 1 clicked!").
     */
-    //ENTER YOUR CODE HERE
+    
 
     /* 
     PROBLEM 5 (DEBUGGING): Fix the button styles
